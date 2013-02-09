@@ -1,0 +1,7 @@
+(define (squares-of-two-numbers a b)
+  (+ (* a a) (* b b)))
+(define (sum-of-the-squares-of-the-two-larger-numbers a b c)
+  (cond ((< a b c) (squares-of-two-numbers b c))
+	 ((< b a c) (squares-of-two-numbers a c))
+	 ((< c a b) (squares-of-two-numbers a b))
+	 ))
