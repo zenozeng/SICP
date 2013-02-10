@@ -11,7 +11,9 @@
 (define (good-enough? guess x)
   (< (abs (- (square guess) x)) 0.001))
 (define (sqrt x)
-  (sqrt-iter 1.0 x))
+  (if (= 0 x)
+      0
+      (sqrt-iter 1.0 x)))
 (define (square x)
   (* x x))
 ;; 但是这个good-enough不够优秀
@@ -26,5 +28,5 @@
   (display (square guess))
   (display "\n\n")
   (< (abs (- 1
-	   (/ guess (improve guess x))))
+	     (/ guess (improve guess x))))
      0.01))

@@ -10,7 +10,9 @@
      3))
 
 (define (cube-root x)
-  (cube-root-iter 1.0 x))
+  (if (= 0 x)
+      0
+      (cube-root-iter 1.0 x)))
 
 (define (good-enough? guess x)
   (display guess)
@@ -18,5 +20,5 @@
   (display (square guess))
   (display "\n\n")
   (< (abs (- 1
-	   (/ guess (improve guess x))))
+	     (/ guess (improve guess x))))
      0.01))
